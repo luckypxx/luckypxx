@@ -86,3 +86,6 @@ b.String类提供的静态方法valueOf（基本类型），不产生垃圾空�
 String str = String.valueOf(10);
 ```
 
+欢迎交流~
+
+转载请注明原地址：[Lucky-pxx的博客](http://www.bingoxin.top) » [点击阅读原文](http://www.bingoxin.top/2018/10/java%E4%B8%AD%E7%9A%84Object%E7%B1%BB/),谢谢！
