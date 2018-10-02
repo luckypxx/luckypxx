@@ -339,4 +339,4 @@ StringBuilder(JDK1.5)，采用同步处理，线程不安全，效率高，当�
 
 欢迎交流~
 
-转载请注明原地址：[Lucky-pxx的博客](http://www.bingoxin.top) » [点击阅读原文](http://www.bingoxin.top/2018/04/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E6%97%A0%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BA%A4/),谢谢！
+转载请注明原地址：[Lucky-pxx的博客](http://www.bingoxin.top) » [点击阅读原文](http://www.bingoxin.top/2018/10/java%E4%B8%AD%E7%9A%84String%E7%B1%BB/),谢谢！
