@@ -137,7 +137,207 @@ public char charAt(int index) //返回指定索引下标的字符
 3.将字符串转为字符数组
 
 ```java
-public char[] toCharArray();
+public char[] toCharArray()
 ```
+
+- 字节数组与字符串
+
+用String类的构造方法将字节数组转成字符串
+
+```java
+public String(byte[] bytes)
+```
+
+将字符串转为字节数组
+
+```java
+public byte[] getBytes(String charset);
+```
+
+- 字符串比较
+
+**相等比较**
+
+```java
+str1.equals(str2)
+```
+
+**不区分大小写的比较**
+
+```java
+public boolean equalsIgnoreCase(String str2)
+```
+
+**两个字符串的关系**
+
+\>0：表示本字符串大于目标字符串
+
+<0：表示本字符串小于目标字符串
+
+=0：表示本字符串等于目标字符串
+
+```java
+public int compareTo(String str2)
+```
+
+- 字符串查找
+
+从一个完整的字符串之中判断指定内容是否存在
+
+```java
+public boolean contains(String str)//对象方法
+```
+
+判断是否以指定的字符串开头
+
+```java
+public boolean startsWith(String str)//起始位置
+public boolean startsWith(String prefix,int offset)//偏移量为offset的位置开始
+```
+
+判断是否以指定字符串结尾
+
+```java
+public boolean endsWith(String str)
+```
+
+- 字符串替换
+
+```java
+public String replaceAll(String regex,String replacement)
+例：
+str.replaceAll("l","_"):将str中的所有l换成_
+```
+
+- 字符串拆分
+
+```java
+public String[] split(String regex)
+public String[] split(String regex,int limit)//将字符串拆分成数组长度为limit的子字符串数组
+```
+
+请看下面的程序：
+
+```java
+String str = "129.168.1.1";
+String result = str.split(".");
+for(str temp:result){
+    System.out.print(temp+"、");
+}
+```
+
+
+
+其输出结果为：
+
+即没有输出。
+
+而我们想要的的结果是：129、168、1、1
+
+在这里我们要注意，"."在Java语言中表示类的引用，其为特殊字符，因此需要转义
+
+如一下程序：
+
+```java
+String str = "129.168.1.1";
+String result = str.split("\\.");
+for(str temp:result){
+    System.out.print(temp+"、");
+}
+```
+
+接下来请看两次截取的一段程序：
+
+```java
+public static void main(String[] args) {
+        String str = "Lisa:18|Tom:20";
+        String[] result = str.split("\\|");
+        for(String temp:result){
+            String name = temp.split(":")[0];
+            String age = temp.split(":")[1];
+            System.out.println("姓名："+name);
+            System.out.println("年龄:"+age);
+        }
+    }
+```
+
+
+
+**特殊字符需要转义后拆分**
+
+- 字符串截取
+
+```java
+public String substring(int beginIndex)//从指定索引截取到结尾
+public String substring(int beginIndex,int endIndex)//从指定索引截取部分内容,左闭右开
+```
+
+- 去除字符串的左右空格，保留中间空格
+
+```java
+public String trim()
+```
+
+- 字符串转大小写
+
+```java
+public String toUpperCase();//字符串全部转为大写
+public String toLowerCase();//字符串全部转为小写
+```
+
+- 判断字符串是否为空字符串，不判断null
+
+```java
+public boolean isEmpty()
+```
+
+### StringBuffer和StringBuilder
+
+- 字符串拼接方法
+
+```java
+public synchronized StringBuffer append(各种数据类型)
+```
+
+- StringBuffer与String类的相互转换
+
+**StringBuffer->String**
+
+调用StringBuffer的构造方法 
+
+```java
+new StringBuffer("str");
+```
+
+**String->StringBuffer**
+
+调用
+
+```java
+StringBuffer.toString()
+```
+
+- 字符串反转
+
+```java
+reverse():StringBuffer
+```
+
+- 删除（修改）指定范围的数据
+
+```java
+delete(int start,int end):StringBuffer
+insert(int offset,各种数据类型):StringBuffer
+```
+
+- String、StringBuffer、StringBuilder的区别
+
+1.String内容不可改变，StringBuffer、StringBuilder内容可以改变
+
+2.StringBuffer JDK1.0，采用同步处理，线程安全，效率较低
+
+StringBuilder(JDK1.5)，采用同步处理，线程不安全，效率高，当在String对象进行“+”，编译时会将String类变成StringBuilder进行append()处理
+
+欢迎交流~
 
 转载请注明原地址：[Lucky-pxx的博客](http://www.bingoxin.top) » [点击阅读原文](http://www.bingoxin.top/2018/04/%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E6%97%A0%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BA%A4/),谢谢！
