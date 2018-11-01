@@ -1,4 +1,9 @@
-# Object---最高参数统一化
+---
+layout: post
+title: Object类---最高参数统一化
+date: 2018-10-30
+tag: Java
+--- 
 
 Object类是JDK默认提供的一个类。Java中除了Object类，所有的类都存在继承关系，默认会继承Object父类
 
